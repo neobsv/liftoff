@@ -91,7 +91,7 @@ resource "aws_route_table" "route_table" {
   lifecycle {
     create_before_destroy = true
   }
-  
+
   depends_on = [aws_vpc.vpc0]
 }
 
@@ -103,7 +103,7 @@ resource "aws_route" "public_route" {
   lifecycle {
     create_before_destroy = true
   }
-  
+
   depends_on = [aws_route_table.route_table]
 }
 
