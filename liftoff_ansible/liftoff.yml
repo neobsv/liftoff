@@ -1,0 +1,14 @@
+# Install chrony, some other daemons, setup selinux and other prep steps.
+
+- name: Playbook for preparing an AWS EC2 instance
+  hosts: all
+  become: true
+  become_user: ec2-user
+  become_method: ansible.builtin.sudo
+
+  roles:
+    - role: prepare
+    - role: install_docker
+    - role: install_k8s_master
+    # - role: install_k8s_node
+
