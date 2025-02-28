@@ -92,8 +92,3 @@
 - name: Label current node as worker node
   ansible.builtin.shell: |
     kubectl label node --overwrite node-role.kubernetes.io/worker=true
-
-- name: Set SELinux to permissive mode
-  ansible.posix.selinux:
-    state: permissive
-    policy: targeted

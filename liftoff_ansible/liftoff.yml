@@ -1,4 +1,7 @@
-# Install chrony, some other daemons, setup selinux and other prep steps.
+# Install docker as the container daemon
+# Install the kubernetes master asg
+# Install the kubernetes node asg
+# Prepare the instances with chrony, av, and other daemons
 
 - name: Playbook for preparing an AWS EC2 instance
   hosts: all
@@ -7,8 +10,7 @@
   become_method: ansible.builtin.sudo
 
   roles:
-    - role: prepare
     - role: install_docker
     - role: install_k8s_master
     # - role: install_k8s_node
-
+    - role: prepare

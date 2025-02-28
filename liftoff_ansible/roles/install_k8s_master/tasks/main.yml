@@ -116,8 +116,3 @@
   ansible.builtin.command: kubectl top nodes
   register: metrics_server_status
   failed_when: metrics_server_status.rc != 0
-
-- name: Set SELinux to permissive mode
-  ansible.posix.selinux:
-    state: permissive
-    policy: targeted
